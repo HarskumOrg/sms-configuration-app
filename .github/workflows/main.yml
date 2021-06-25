@@ -10,7 +10,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           start: |
-            yarn build
+            yarn start
             d2 cluster up mycluster --dhis2-version 2.35.5 --seed --db-version 2.35 --update --port 9000
           wait-on: 'http://localhost:3000, http://localhost:9000'
           wait-on-timeout: 600
