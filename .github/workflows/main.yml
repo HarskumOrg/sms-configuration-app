@@ -20,12 +20,14 @@ jobs:
           config-file: ./cypress.json
           command: yarn cy:run
         env: 
-          CYPRESS_dhis2BaseUrl=http://localhost:9000
-          CYPRESS_dhis2Username=admin
-          CYPRESS_dhis2Password=district
-          CYPRESS_dhis2DataTestPrefix=dhis2-smsconfiguration
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          CYPRESS_dhis2BaseUrl: http://localhost:9000
+          CYPRESS_dhis2Username: admin
+          CYPRESS_dhis2Password: district
+          CYPRESS_dhis2DataTestPrefix: dhis2-smsconfiguration
+          
+          
           
         
       
