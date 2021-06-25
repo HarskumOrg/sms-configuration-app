@@ -1,4 +1,5 @@
 # sms-configuration-app
+update
 
 New DHIS2 SMS web app
 
