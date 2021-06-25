@@ -37,7 +37,6 @@ jobs:
           headless: true
           record: true
           config-file: ./cypress.json
-          command: yarn cy:run
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
