@@ -6,10 +6,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: install dhis2 cli
+        run: yarn global add @dhis2/cli
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          build: yarn global add @dhis2/cli
           start: |
             yarn start
             d2 cluster up mycluster --dhis2-version 2.35.5 --seed --db-version 2.35 --update --port 9000
