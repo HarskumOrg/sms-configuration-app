@@ -6,8 +6,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+            node-version: 12.x
+
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+            path: '**/node_modules'
+            key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install Cypress binary
+        run: yarn cypress install
+
+      - name: install yarn
+        run: brew install yarn
+        
       - name: install dhis2 cli
         run: yarn global add @dhis2/cli
+        
       - name: start dhis2 server
         run: d2 cluster up mycluster --dhis2-version 2.35.5 --seed --db-version 2.35 --update --port 9000
       - name: Cypress run
