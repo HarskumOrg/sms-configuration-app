@@ -39,9 +39,9 @@ jobs:
           wait-on-timeout: 120
           browser: chrome
           headless: true
-          record: false
-          parallel: false
-          group: 'E2E'
+          #record: true
+          #parallel: true
+          #group: 'E2E'
           config-file: ./cypress.json
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
