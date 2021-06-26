@@ -6,7 +6,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containers: [1, 2, 3, 4, 5, 6]
+        containers: [1]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -30,7 +30,7 @@ jobs:
         run: yarn global add @dhis2/cli
         
       - name: start dhis2 server
-        run: d2 cluster up mycluster --dhis2-version 2.35.5 --seed --db-version 2.35
+        run: d2 cluster up master --channel dev --db-version dev --dhis2-version master --seed
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
@@ -39,8 +39,8 @@ jobs:
           wait-on-timeout: 120
           browser: chrome
           headless: true
-          record: true
-          parallel: true
+          record: false
+          parallel: false
           group: 'E2E'
           config-file: ./cypress.json
         env: 
