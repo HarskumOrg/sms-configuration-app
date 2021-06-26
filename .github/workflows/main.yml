@@ -21,13 +21,16 @@ jobs:
             path: '**/node_modules'
             key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
 
-      - name: install yarn
+      - name: Install yarn
         run: brew install yarn
+        
+      - name: Install Cypress binary
+        run: yarn cypress install
       
-      - name: install dhis2 cli
+      - name: Install dhis2 cli
         run: yarn global add @dhis2/cli
         
-      - name: start dhis2 server
+      - name: Start dhis2 server
         run: d2 cluster up master --channel dev --db-version dev --dhis2-version master --seed
       
       - name: Cypress run
