@@ -35,7 +35,7 @@ jobs:
         with:
           start: yarn start
           wait-on: 'http://localhost:3000, http://localhost:8080'
-          wait-on-timeout: 10
+          wait-on-timeout: 30
           browser: chrome
           headless: true
           #record: true
