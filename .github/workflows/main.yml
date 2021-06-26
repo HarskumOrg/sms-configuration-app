@@ -23,9 +23,6 @@ jobs:
 
       - name: Install yarn
         run: brew install yarn
-        
-      - name: Install Cypress binary
-        run: yarn cypress install
       
       - name: Install dhis2 cli
         run: yarn global add @dhis2/cli
