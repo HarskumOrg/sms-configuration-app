@@ -3,6 +3,9 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        containers: [1, 2, 3]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -36,6 +39,8 @@ jobs:
           browser: chrome
           headless: true
           record: true
+          parallel: true
+          group: 'E2E'
           config-file: ./cypress.json
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
