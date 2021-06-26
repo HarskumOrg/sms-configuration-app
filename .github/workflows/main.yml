@@ -21,6 +21,9 @@ jobs:
             path: '**/node_modules'
             key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
 
+      - name: install yarn
+        run: brew install yarn
+      
       - name: install dhis2 cli
         run: yarn global add @dhis2/cli
         
@@ -32,7 +35,7 @@ jobs:
         with:
           start: yarn start
           wait-on: 'http://localhost:3000, http://localhost:8080'
-          wait-on-timeout: 120
+          wait-on-timeout: 10
           browser: chrome
           headless: true
           #record: true
