@@ -18,6 +18,9 @@ jobs:
       - name: Install yarn
         run: brew install yarn
         
+      - name: Install d2-app-scripts
+        run: yarn add --dev @dhis2/cli-app-scripts
+        
       - name: Start server
         run: yarn start
       
