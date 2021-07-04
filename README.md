@@ -1,5 +1,5 @@
 # sms-configuration-app
-update
+[![End-to-end tests](https://github.com/HarskumOrg/sms-configuration-app/actions/workflows/main.yml/badge.svg)](https://github.com/HarskumOrg/sms-configuration-app/actions/workflows/main.yml)
 
 New DHIS2 SMS web app
 
