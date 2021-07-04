@@ -1,7 +1,7 @@
-name: End-to-end tests
+name: Record fixtures
 on:
   schedule:
-    # runs tests every day at 4am
+    # runs build every day at 4am
     - cron: '0 4 * * *'
 jobs:
   cypress-run:
