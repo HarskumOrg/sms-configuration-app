@@ -17,6 +17,9 @@ jobs:
 
       - name: Install yarn
         run: brew install yarn
+        
+      - name: Start server
+        run: yarn start
       
       - name: Cypress run
         uses: cypress-io/github-action@v2
