@@ -14,15 +14,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
             node-version: 12.x
-
-      - name: Install yarn
-        run: brew install yarn
-        
-      - name: Install d2-app-scripts
-        run: yarn add --dev @dhis2/cli-app-scripts
-        
-      - name: Start server
-        run: yarn start
       
       - name: Cypress run
         uses: cypress-io/github-action@v2
